@@ -34,3 +34,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+------------
+DEV NOTES
+
+right now. I need to remember to change out the PDFViewer component to 'react-pdf'
+
+Also, at some point consider switching out the LLM before putting it on the node. 
+
+
+
+
+
+
+
+
+Long-term goals for this project.... 
+
+--- GENESIS
+1. pdf analyzer
+2. 5 media options
+--- BLOCKCHAIN PHASE ONE
+1. containerize and throw in p2p network 
+2. nodes validate through stake (polkadot ... and substrate?)
+---- MAKE IT UNFORGETTABLE
+1. personal assistant
+2. cloud drive
+3. chat
+--- BLOCKCHAIN PHASE TWO
+1. email
+2. make sure storage and sending/receiving as optimized as possible
+--- REVELATION
+1. social clones (picscroll, twooter, bookface, onlyFlan)

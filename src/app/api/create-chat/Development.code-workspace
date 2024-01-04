@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Development",
+			"path": "../../../../.."
+		},
+		{
+			"name": "ILT-Python-for-ML",
+			"path": "../../../../../../Downloads/ILT-Python-for-ML"
+		}
+	],
+	"settings": {}
+}
