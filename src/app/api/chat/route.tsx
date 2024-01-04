@@ -23,10 +23,7 @@ export async function POST(req: Request) {
     const fileKey = _chats[0].fileKey;
     const lastMessage = messages[messages.length - 1];
     console.log("hitting right before getContext")
-    // const context = await getContext(lastMessage.content, fileKey);
-        // Fetch the context from the server-side API route
-    const contextResponse = await fetch(`/api/getContext?content=${encodeURIComponent(lastMessage.content)}&fileKey=${encodeURIComponent(fileKey)}`)
-    const { context } = await contextResponse.json()
+    const context = await getContext(lastMessage.content, fileKey);
     console.log("hitting right after getContext")
     const prompt = {
       role: "system",
