@@ -1,14 +1,17 @@
 // import AWS from 'aws-sdk'
 // require('dotenv').config()
-
-import s3Client from "@/s3-client";
+import { S3Client } from "@aws-sdk/client-s3";
 import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { Readable } from 'stream-browserify';
-// let Readable: any;
-// if (typeof window === 'undefined') {
-//   // This code will only run on the server
-//   Readable = require('stream').Readable;
-// }
+
+
+const s3Client = new S3Client({
+    region: 'us-west-1', 
+    credentials: {
+        accessKeyId: process.env.NEXT_PUBLIC_S3_PUBLIC_ACCESS_KEY_ID!,
+        secretAccessKey: process.env.NEXT_PUBLIC_S3_SECRET_ACCESS_KEY!,
+      },
+})
 
 import { createWriteStream } from 'fs'
 

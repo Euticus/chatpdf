@@ -67,3 +67,8 @@ Long-term goals for this project....
 2. make sure storage and sending/receiving as optimized as possible
 --- REVELATION
 1. social clones (picscroll, twooter, bookface, onlyFlan)
+
+
+migrations made by typing:
+
+`npx drizzle-kit push:pg`

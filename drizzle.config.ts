@@ -1,15 +1,11 @@
 import type {Config} from 'drizzle-kit'
-import * as dotenv from 'dotenv'
-const path = require('path')
-require('dotenv').config({ 
-    path: path.resolve(__dirname, '../.env')
-})
+require('dotenv').config()
 
 export default {
     driver: 'pg',
-    schema: './src/lib/db/schema.ts',
+    schema: './lib/db/schema.ts',
     dbCredentials: {
-        connectionString: process.env.DATABASE_URL!
+        connectionString: process.env.DATABASE_URL!,
     }, 
 } satisfies Config
 

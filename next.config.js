@@ -16,7 +16,7 @@
 
 module.exports = {
     webpack: (config, {isServer}) => {
-        // config.resolve.fallback = { fs: false, path: false };
+        config.resolve.fallback = { fs: false, path: false };
         // if (!isServer) {
         //     config.resolve.fallback = {
         //       ...config.resolve.fallback,

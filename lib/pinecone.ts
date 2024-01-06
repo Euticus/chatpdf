@@ -5,24 +5,17 @@ import { Document, RecursiveCharacterTextSplitter } from '@pinecone-database/doc
 import { getEmbeddings } from "./embeddings";
 import md5 from 'md5'
 import { convertToAscii } from "./utils";
-//@ts-ignore
-// let downloadFromS3: ((key: string) => Promise<string>);
-// if (typeof window === 'undefined') {
-//     // This code will only run on the server
-//     downloadFromS3 = require('@/lib/s3-server').downloadFromS3;
-//   }
 
-let pinecone: Pinecone | null = null;
 
-export const getPineconeClient = async () => {
-    if (!pinecone){
-        pinecone = new Pinecone({
-            environment: process.env.PINECONE_ENVIRONMENT!, 
-            apiKey: process.env.PINECONE_API_KEY!
-        })
-    }
-    return pinecone
+// let pinecone: Pinecone | null = null;
+
+export const getPineconeClient = () => {
+    return new Pinecone({
+      environment: process.env.PINECONE_ENVIRONMENT!,
+      apiKey: process.env.PINECONE_API_KEY!,
+    });
 };
+
 
 type PDFPage = {
     pageContent: string;
@@ -51,9 +44,9 @@ export async function loadS3IntoPinecone(fileKey: string){
     // 4. upload to pinecone
     const client = await getPineconeClient()
     const pineconeIndex = client.Index("chatpdf")
-    // const namespace = pineconeIndex.namespace(convertToAscii(fileKey));
+    const namespace = pineconeIndex.namespace(convertToAscii(fileKey));
     console.log('inserting vectors into pinecone')
-    await pineconeIndex.upsert(vectors)
+    await namespace.upsert(vectors)
     
     return documents[0]
 }
